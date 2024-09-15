@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+</head>
+<body>
+    <h1>Chat Interface</h1>
+    <form id="chat-form">
+        <label for="prompt">Enter your prompt:</label>
+        <input type="text" id="prompt" name="prompt" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="response-container"></div>
+
+    <script>
+        document.getElementById('chat-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const prompt = document.getElementById('prompt').value;
+            
+            const response = await fetch('http://localhost:5000/api/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    prompt: prompt,
+                    model: 'gemma2'
+                }),
+            });
+
+            const data = await response.json();
+            const responseContainer = document.getElementById('response-container');
+            if (response.ok) {
+                responseContainer.innerHTML = `
+                    <h2>Response:</h2>
+                    <p>${data.response}</p>
+                    <h2>Sources:</h2>
+                    <ul>${data.sources.map(source => `<li>${source}</li>`).join('')}</ul>
+                `;
+            } else {
+                responseContainer.innerHTML = `<p>Error: ${data.error}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>

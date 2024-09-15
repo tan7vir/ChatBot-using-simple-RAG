@@ -1,3 +1,6 @@
+
+#  Air
+
 import requests
 import json
 from langchain_chroma import Chroma
@@ -28,60 +31,46 @@ def load_books( ):
     add_to_vectorDatabase(chunked_pages)
 
 # Define the main function
-def main( ) :
-
+def get_response(user_prompt: str) -> dict:
     # Load the books
-    print("1st")
-    load_books()
-    print("2nd")
+    # load_books()
 
     # preparing the vector database
     embedding_function = get_embeddings()
-    db = Chroma (
-        persist_directory="chroma", 
-        embedding_function = embedding_function
+    db = Chroma(
+        persist_directory="chroma",
+        embedding_function=embedding_function
     )
 
-    while True:
-        # Ask the user for the prompt
-        user_prompt = input("Enter your prompt (or type 'exit' to quit): ")
+    result = db.similarity_search_with_score(user_prompt, k=3)
 
-        if user_prompt.lower() == 'exit':
-            print("Exiting...")
-            break
+    context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in result])
+    prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
+    prompt = prompt_template.format(context=context_text, question=user_prompt)
 
-        result = db.similarity_search_with_score ( user_prompt, k = 3 )
+    # Define the data payload with the user's prompt
+    data = {
+        "model": "gemma2",
+        "prompt": prompt,
+        "stream": False
+    }
 
-        context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in result])
-        prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
-        prompt = prompt_template.format(context = context_text, question = user_prompt)
+    # Send a POST request
+    response = requests.post(url, json=data)
+    sources = [doc.metadata.get("id", None) for doc, _score in result]
 
-        # Define the data payload with the user's prompt
-        data = {
-            "model": "gemma2",
-            "prompt": prompt,
-            "stream": False
+    # Check if the request was successful
+    if response.status_code == 200:
+        response_data = response.json()
+        response_text = response_data.get('response', '')
+
+        # Clean up the response text
+        response_text = response_text.replace('\n\n', ' ').replace('\n', ' ').strip()
+
+        return {
+            "response": response_text,
+            "sources": sources
         }
+    else:
+        return {"response": "Input diben na?"}
 
-        # Send a POST request
-        response = requests.post(url, json=data)
-        sources = [doc.metadata.get("id", None) for doc, _score in result]
-
-        # Check if the request was successful
-        if response.status_code == 200:
-            # Parse the JSON response into a Python dictionary
-            response_data = response.json()
-
-            if "response" in response_data:
-                print(f"Response: {response_data['response']}\nSources: {sources}")
-            else:
-                print("No 'response' field found in the response.")
-        
-        else:
-            print(f"Failed to get a response. Status code: {response.status_code}")
-
-        # Ask for another input prompt
-        print("\n---\n")
-
-if __name__ == "__main__":
-    main()  # Air
