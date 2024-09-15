@@ -32,9 +32,6 @@ def add_to_vectorDatabase(chunks: list[Document]):
     if len(new_chunks):
         new_chunk_ids = [chunk.metadata["id"] for chunk in new_chunks]
         db.add_documents(new_chunks, ids=new_chunk_ids)
-        print(f"Added {len(new_chunks)} new documents to the DB.")
-    else:
-        print("Nothing New.")
 
 
 def calculate_chunk_ids(chunks):
