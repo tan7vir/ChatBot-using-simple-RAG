@@ -1,0 +1,84 @@
+[33mWARNING[0m:  [19-09-2024 17:45:55] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [19-09-2024 17:45:55] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [19-09-2024 17:45:55] Starting component System
+[36mDEBUG[0m:    [19-09-2024 17:45:55] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [19-09-2024 17:45:55] Starting component SqliteDB
+[36mDEBUG[0m:    [19-09-2024 17:45:55] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [19-09-2024 17:45:55] Starting component Posthog
+[36mDEBUG[0m:    [19-09-2024 17:45:55] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [19-09-2024 17:45:55] Starting component SegmentAPI
+[32mINFO[0m:     [19-09-2024 17:45:55] Started server process [[36m17760[0m]
+[32mINFO[0m:     [19-09-2024 17:45:55] Waiting for application startup.
+[32mINFO[0m:     [19-09-2024 17:45:55] Application startup complete.
+[32mINFO[0m:     [19-09-2024 17:45:55] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [19-09-2024 17:46:37] ::1:52213 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 17:46:37] ::1:52213 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 17:46:37] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 17:46:37] ::1:52214 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 17:48:50] ::1:52313 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 17:48:50] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [19-09-2024 17:48:50] ::1:52313 - "POST /api/v1/collections/1c867f53-158b-41fb-a201-0ce02d2877ff/upsert HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 17:48:50] ::1:52314 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 17:48:50] ::1:52314 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 17:48:50] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 17:48:50] ::1:52315 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 17:53:45] ::1:52423 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 17:53:45] ::1:52423 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 17:53:45] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 17:53:45] ::1:52424 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [19-09-2024 17:53:49] Number of requested results 5 is greater than number of elements in index 3, updating n_results = 3
+[32mINFO[0m:     [19-09-2024 17:53:49] ::1:52424 - "POST /api/v1/collections/1c867f53-158b-41fb-a201-0ce02d2877ff/query HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 17:59:39] ::1:52534 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 17:59:39] ::1:52534 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 17:59:39] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 17:59:39] ::1:52535 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [19-09-2024 17:59:53] Number of requested results 5 is greater than number of elements in index 3, updating n_results = 3
+[32mINFO[0m:     [19-09-2024 17:59:53] ::1:52535 - "POST /api/v1/collections/1c867f53-158b-41fb-a201-0ce02d2877ff/query HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:01:25] ::1:52583 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:01:25] ::1:52583 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 18:01:25] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 18:01:25] ::1:52584 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [19-09-2024 18:01:28] Number of requested results 5 is greater than number of elements in index 3, updating n_results = 3
+[32mINFO[0m:     [19-09-2024 18:01:28] ::1:52584 - "POST /api/v1/collections/1c867f53-158b-41fb-a201-0ce02d2877ff/query HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:06:02] ::1:52660 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:06:02] ::1:52660 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 18:06:02] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 18:06:02] ::1:52661 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [19-09-2024 18:06:05] Number of requested results 5 is greater than number of elements in index 3, updating n_results = 3
+[32mINFO[0m:     [19-09-2024 18:06:05] ::1:52661 - "POST /api/v1/collections/1c867f53-158b-41fb-a201-0ce02d2877ff/query HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:18:37] ::1:52835 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:18:37] ::1:52835 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 18:18:37] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 18:18:37] ::1:52836 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [19-09-2024 18:18:51] Number of requested results 5 is greater than number of elements in index 3, updating n_results = 3
+[32mINFO[0m:     [19-09-2024 18:18:51] ::1:52836 - "POST /api/v1/collections/1c867f53-158b-41fb-a201-0ce02d2877ff/query HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:30:24] ::1:53040 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:30:24] ::1:53040 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 18:30:24] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 18:30:24] ::1:53041 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:32:31] ::1:53083 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:32:31] ::1:53083 - "POST /api/v1/collections/1c867f53-158b-41fb-a201-0ce02d2877ff/upsert HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:32:31] ::1:53084 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:32:31] ::1:53084 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 18:32:31] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 18:32:31] ::1:53085 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [19-09-2024 18:32:34] Number of requested results 5 is greater than number of elements in index 3, updating n_results = 3
+[32mINFO[0m:     [19-09-2024 18:32:34] ::1:53085 - "POST /api/v1/collections/1c867f53-158b-41fb-a201-0ce02d2877ff/query HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:37:43] ::1:53185 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:37:43] ::1:53185 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 18:37:43] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 18:37:43] ::1:53186 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:39:47] ::1:53246 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:39:47] ::1:53246 - "POST /api/v1/collections/1c867f53-158b-41fb-a201-0ce02d2877ff/upsert HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:39:47] ::1:53247 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:39:47] ::1:53247 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 18:39:47] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 18:39:47] ::1:53248 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [19-09-2024 18:39:51] Number of requested results 5 is greater than number of elements in index 3, updating n_results = 3
+[32mINFO[0m:     [19-09-2024 18:39:51] ::1:53248 - "POST /api/v1/collections/1c867f53-158b-41fb-a201-0ce02d2877ff/query HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:43:35] ::1:53335 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-09-2024 18:43:35] ::1:53335 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[36mDEBUG[0m:    [19-09-2024 18:43:35] Collection PhysicsBook already exists, returning existing collection.
+[32mINFO[0m:     [19-09-2024 18:43:35] ::1:53336 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [19-09-2024 18:43:39] Number of requested results 5 is greater than number of elements in index 3, updating n_results = 3
+[32mINFO[0m:     [19-09-2024 18:43:39] ::1:53336 - "POST /api/v1/collections/1c867f53-158b-41fb-a201-0ce02d2877ff/query HTTP/1.1" 200

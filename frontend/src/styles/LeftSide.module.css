@@ -1,0 +1,29 @@
+ .leftSide {
+    background-color: var(--col1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+ } 
+
+ .text1 {
+    color: var(--textcol);
+    font-size: 1vw;
+ }
+ .heading {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    height: 10%;
+ }
+
+ .user {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    height: 10%;
+ }
+
+ .logo {
+    margin-right: 10px;
+ }
