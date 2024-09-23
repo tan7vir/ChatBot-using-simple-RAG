@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from chat import get_response
+from get_response import get_response
 from flask_cors import CORS
 import subprocess
 import json
