@@ -10,36 +10,24 @@ client = chromadb.PersistentClient(path="../Data/vectorDB")
 # To run the Chroma server, use the following command:
 # chroma run --path /db_path
 
-chroma_client = chromadb.HttpClient(host='localhost', port=8000)
+# chroma_client = chromadb.HttpClient(host='localhost', port=8000)
 
-def feed_vector_db (chunks: list[Document]): 
+def feed_vector_db (chunks: list[Document]):
 
-    emb_fn = OllamaEmbeddings(model="gemma2:2b")
+    collection_name = "PhysicsBook"
+
+    emb_fn = OllamaEmbeddings(model="nomic-embed-text")
 
     from langchain_chroma import Chroma
 
     collection = Chroma(
-        collection_name="PhysicsBook",
+        collection_name=collection_name,
         embedding_function=emb_fn,
         persist_directory="../Data/vectorDB",  # Where to save data locally, remove if not necessary
     )
 
     chunks_with_ids = calculate_chunk_ids(chunks)
     chunk_ids = [chunk.metadata["id"] for chunk in chunks_with_ids]
-
-    print ("<")
-    print ("<")
-    print ("<")
-    print ("<")
-    print ("<")
-    print ("<")
-    print ("<")
-    print ("<")
-    print ("<")
-    print ("<")
-    print ("<")
-    print ("<")
-    print ("<") 
 
     collection.add_documents (
         documents= chunks_with_ids,

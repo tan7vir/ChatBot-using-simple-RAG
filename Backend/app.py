@@ -10,11 +10,8 @@ CORS(app)
 @app.route('/api/generate', methods=['POST'])
 def generate():
     data = request.get_json()
-    prompt = data.get('prompt')
 
-    response = get_response(prompt) 
-
-    print(response)
+    response = get_response(data) 
 
     return jsonify(response)
 

@@ -1,0 +1,23 @@
+[33mWARNING[0m:  [23-09-2024 20:04:40] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [23-09-2024 20:04:40] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [23-09-2024 20:04:40] Starting component System
+[36mDEBUG[0m:    [23-09-2024 20:04:40] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [23-09-2024 20:04:40] Starting component SqliteDB
+[36mDEBUG[0m:    [23-09-2024 20:04:40] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [23-09-2024 20:04:40] Starting component Posthog
+[36mDEBUG[0m:    [23-09-2024 20:04:40] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [23-09-2024 20:04:40] Starting component SegmentAPI
+[32mINFO[0m:     [23-09-2024 20:04:40] Started server process [[36m9344[0m]
+[32mINFO[0m:     [23-09-2024 20:04:40] Waiting for application startup.
+[32mINFO[0m:     [23-09-2024 20:04:40] Application startup complete.
+[32mINFO[0m:     [23-09-2024 20:04:40] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [23-09-2024 20:04:52] ::1:49876 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [23-09-2024 20:04:52] ::1:49876 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [23-09-2024 20:04:52] ::1:49877 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [23-09-2024 20:04:52] ::1:49877 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [23-09-2024 20:04:55] ::1:49880 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [23-09-2024 20:04:55] ::1:49880 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [23-09-2024 20:04:55] ::1:49881 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [23-09-2024 20:04:55] ::1:49881 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [23-09-2024 20:05:19] ::1:49892 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [23-09-2024 20:05:19] ::1:49892 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200

@@ -5,6 +5,7 @@ import styles from '@/styles/RightSide.module.css';
 import aiLogo from '@/assets/AI.png'
 import user from '@/assets/User.png'
 import Image from 'next/image';
+import DropdownComponent from './DropdownComponent';
 import { HashLoader } from 'react-spinners';
 
 function RightSide() {
@@ -67,7 +68,33 @@ function RightSide() {
       console.error('Error:', error);
       setIsSent(true);  // Still update the status in case of error
     }
-  }
+  } 
+
+  // for Drop Down menue 
+  const menuItems = [
+    {
+      key: 'gemma:2b',
+      shortcut: '⌘G2B',
+      description: 'Medium level model',
+      label: 'Gemma 2b',
+      icon: <img src="https://img.icons8.com/?size=100&id=26256&format=png&color=000000" alt="Add Note" />
+    },
+    {
+      key: 'llama2:latest',
+      shortcut: '⌘L7B',
+      description: 'Large language model',
+      label: 'Llama 2',
+      icon: <img src="https://img.icons8.com/?size=100&id=15783&format=png&color=000000" alt="llama" />
+      
+    },
+    {
+      key: 'nomic-embed-text:latest',
+      shortcut: '⌘N170M',
+      description: 'Small language model',
+      label: 'Nomic-Embed-Text',
+      icon: <img src="https://img.icons8.com/?size=100&id=64794&format=png&color=000000" alt="nomic" />
+    }
+  ];
 
 
   return (
@@ -75,7 +102,9 @@ function RightSide() {
 
       <div className={styles.rightin}>
         <div className={styles.chatgptversion}>
-          <p className={styles.text1}>Gemma2</p>
+
+          <DropdownComponent  />
+
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
           </svg>
