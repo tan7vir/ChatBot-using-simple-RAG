@@ -26,7 +26,7 @@ PROMPT_TEMPLATE = """
 
 # Define the API endpoint
 url = "http://localhost:11434/api/generate"
-text = "../Data/o-level-physics-formula-sheet-2.pdf"
+text = "../Data/PhysicsBook.pdf"
 
 def load_books(data: object):
     
@@ -41,7 +41,6 @@ def get_response(data: object) -> dict:
     print ( data.get('model') )
     # Load the books
     # load_books(data)
-
     # print ( "<<--Books loaded-->>" )
 
     emb_fn = OllamaEmbeddings(model = "nomic-embed-text")

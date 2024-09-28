@@ -155,7 +155,7 @@ if prompt := st.chat_input("Enter a message...", key="prompt"):
                 response2 = requests.post(add_response_url, json={"content": prompt, "AssisContent": assistant_reply})
                 if response2.status_code == 200:
                     print("Success")
-                else:
+                else:   
                     print("Failed to connect to the server. Please try again later.")
 
                 # Store and display assistant's reply
