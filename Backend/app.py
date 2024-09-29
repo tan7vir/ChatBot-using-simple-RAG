@@ -3,11 +3,45 @@ from get_response import get_response
 from MongoDB.fetch_all_collection import fetch_all_collection, fetch_chat_list
 from MongoDB.delete_chat import delete_chat
 from MongoDB.update_collection import update_collection
+import atexit
+import subprocess
+import os
 
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
+
+# Function to start Ollama
+def start_ollama():
+    try:
+        # Redirect stdout and stderr to os.devnull
+        with open(os.devnull, 'w') as devnull:
+            ollama_process = subprocess.Popen(
+                ["ollama", "serve"], 
+                stdout=devnull,  # Discard stdout
+                stderr=devnull,  # Discard stderr
+                shell=True       # Required for Windows
+            ) 
+            print("Ollama is starting...", flush=True)
+            return ollama_process
+    except Exception as e:
+        print(f"Error starting Ollama: {e}", flush=True)
+        return None
+
+
+
+# When Backend starts
+ollama_process = start_ollama()
+
+# Stop the Ollama server
+def stop_ollama():
+    if ollama_process:
+        ollama_process.terminate()  
+        print("Ollama server stopped.", flush=True)
+
+# Register the stop_ollama function to be called on exit
+atexit.register(stop_ollama)
 
 @app.route('/api/generate', methods=['POST'])
 def generate():
